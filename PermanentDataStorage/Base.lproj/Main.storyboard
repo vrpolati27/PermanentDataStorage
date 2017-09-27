@@ -1,24 +1,168 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13165.3"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Avenir.ttc">
+            <string>Avenir-Medium</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="PermanentDataStorage" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Full name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ugw-LC-FYd">
+                                <rect key="frame" x="0.0" y="20" width="187.5" height="32"/>
+                                <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zny-zQ-iI5">
+                                <rect key="frame" x="187.5" y="20" width="187.5" height="32"/>
+                                <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter mobile number" textAlignment="natural" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Wan-u0-sZx">
+                                <rect key="frame" x="0.0" y="60" width="187.5" height="32"/>
+                                <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gkR-OR-CsS">
+                                <rect key="frame" x="0.0" y="148" width="375" height="519"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="bbi-pt-K8h">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bbi-pt-K8h" id="BbT-W6-r1v">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="NHl-Gq-hI7"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="JBv-fg-Kr4"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EmployeesList is as Follows" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RAX-zH-mlb">
+                                <rect key="frame" x="0.0" y="115" width="375" height="25"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
+                                <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jsk-X0-gJh">
+                                <rect key="frame" x="262" y="67" width="113" height="40"/>
+                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
+                                <state key="normal" title="Commit info"/>
+                                <connections>
+                                    <action selector="commitButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="juh-M6-udG"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Wan-u0-sZx" firstAttribute="width" secondItem="ugw-LC-FYd" secondAttribute="width" id="4Zm-q8-Y7Y"/>
+                            <constraint firstItem="gkR-OR-CsS" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="7Ia-6A-qwj"/>
+                            <constraint firstItem="gkR-OR-CsS" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Bza-L7-YMb"/>
+                            <constraint firstItem="zny-zQ-iI5" firstAttribute="width" secondItem="ugw-LC-FYd" secondAttribute="width" id="D2D-0d-Ec4"/>
+                            <constraint firstItem="ugw-LC-FYd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="EsL-Dq-Rac"/>
+                            <constraint firstItem="Wan-u0-sZx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Jq3-2Z-nVh"/>
+                            <constraint firstItem="gkR-OR-CsS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="KBY-ST-H8L"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="RAX-zH-mlb" secondAttribute="trailing" id="O3h-fK-mzn"/>
+                            <constraint firstItem="Wan-u0-sZx" firstAttribute="top" secondItem="ugw-LC-FYd" secondAttribute="bottom" constant="8" id="SJ9-k1-mnl"/>
+                            <constraint firstItem="ugw-LC-FYd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="SlL-gV-XA2"/>
+                            <constraint firstItem="gkR-OR-CsS" firstAttribute="top" secondItem="Wan-u0-sZx" secondAttribute="bottom" constant="56" id="U5n-4J-fPg"/>
+                            <constraint firstItem="RAX-zH-mlb" firstAttribute="top" secondItem="Jsk-X0-gJh" secondAttribute="bottom" constant="8" id="Vj8-46-1eH"/>
+                            <constraint firstItem="zny-zQ-iI5" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="dTX-uS-Lhj"/>
+                            <constraint firstItem="zny-zQ-iI5" firstAttribute="height" secondItem="ugw-LC-FYd" secondAttribute="height" id="mkq-ha-2O2"/>
+                            <constraint firstItem="zny-zQ-iI5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="p3q-fx-b2J"/>
+                            <constraint firstItem="Jsk-X0-gJh" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="rz7-LJ-5kD"/>
+                            <constraint firstItem="RAX-zH-mlb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tUS-nC-bGK"/>
+                            <constraint firstItem="gkR-OR-CsS" firstAttribute="top" secondItem="RAX-zH-mlb" secondAttribute="bottom" constant="8" id="tnr-xO-yBR"/>
+                            <constraint firstItem="RAX-zH-mlb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="vxG-Li-59z"/>
+                            <constraint firstItem="zny-zQ-iI5" firstAttribute="leading" secondItem="ugw-LC-FYd" secondAttribute="trailing" id="xpt-Xa-iZ2"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="zny-zQ-iI5" id="0Rb-tS-tvY"/>
+                        <outlet property="employeesTableView" destination="gkR-OR-CsS" id="CcX-y7-rLI"/>
+                        <outlet property="fullNameTextField" destination="ugw-LC-FYd" id="K8n-rT-gFx"/>
+                        <outlet property="mobileNumberTextField" destination="Wan-u0-sZx" id="OXw-HI-Tqr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+        </scene>
+        <!--Mobile Number View Controller-->
+        <scene sceneID="yHY-vS-DYh">
+            <objects>
+                <viewController id="y4n-9g-B08" customClass="MobileNumberViewController" customModule="PermanentDataStorage" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vlh-gd-RIz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone Number" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fl2-U3-WBC">
+                                <rect key="frame" x="0.0" y="140" width="375" height="33"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="24"/>
+                                <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Eae-3p-sDV">
+                                <rect key="frame" x="0.0" y="76" width="375" height="32"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hfv-EF-QL1">
+                                <rect key="frame" x="16" y="205" width="244" height="51"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
+                                <state key="normal" title="Update MobileNumber">
+                                    <color key="titleColor" red="0.40000000600000002" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="updateButtonAction:" destination="y4n-9g-B08" eventType="touchUpInside" id="0uu-q5-26E"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Eae-3p-sDV" firstAttribute="centerX" secondItem="vlh-gd-RIz" secondAttribute="centerX" id="BTM-EV-tkk"/>
+                            <constraint firstItem="Eae-3p-sDV" firstAttribute="leading" secondItem="60k-rd-mum" secondAttribute="leading" id="Gnb-NM-Lqb"/>
+                            <constraint firstItem="hfv-EF-QL1" firstAttribute="top" secondItem="fl2-U3-WBC" secondAttribute="bottom" constant="32" id="KAf-97-g1b"/>
+                            <constraint firstItem="Eae-3p-sDV" firstAttribute="top" secondItem="60k-rd-mum" secondAttribute="top" constant="56" id="Wco-XB-p2y"/>
+                            <constraint firstItem="fl2-U3-WBC" firstAttribute="trailing" secondItem="60k-rd-mum" secondAttribute="trailing" id="cX2-WJ-rYk"/>
+                            <constraint firstItem="hfv-EF-QL1" firstAttribute="leading" secondItem="60k-rd-mum" secondAttribute="leading" constant="16" id="hxy-b5-NYX"/>
+                            <constraint firstItem="fl2-U3-WBC" firstAttribute="top" secondItem="Eae-3p-sDV" secondAttribute="bottom" constant="32" id="uIb-hK-W82"/>
+                            <constraint firstItem="fl2-U3-WBC" firstAttribute="leading" secondItem="60k-rd-mum" secondAttribute="leading" id="yfu-rA-Iw7"/>
+                            <constraint firstItem="Eae-3p-sDV" firstAttribute="trailing" secondItem="60k-rd-mum" secondAttribute="trailing" id="ylG-WE-97K"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="60k-rd-mum"/>
+                    </view>
+                    <connections>
+                        <outlet property="mobileNumberTextField" destination="Eae-3p-sDV" id="R0E-L5-7oo"/>
+                        <outlet property="phoneNumberLabel" destination="fl2-U3-WBC" id="exK-kx-35N"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G3H-bv-d98" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="857" y="134"/>
         </scene>
     </scenes>
 </document>

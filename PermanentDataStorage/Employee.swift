@@ -7,3 +7,16 @@
 //
 
 import Foundation
+
+class Employee{
+    let fullName:String;
+    let emailId:String;
+    let mobileNumber:Int64;
+    
+    /* initializer or constructor. */
+    init(fullName:String, emailId:String, mobileNumber:Int64) {
+        self.fullName = fullName;
+        self.emailId = emailId;
+        self.mobileNumber = mobileNumber;
+    }
+}
